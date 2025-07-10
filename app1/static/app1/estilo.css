@@ -1,0 +1,745 @@
+/* --- ESTILOS GERAIS PARA TODAS AS PÁGINAS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    color: #1f2937;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.header {
+    margin-bottom: 3rem;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    background: #fff;
+    border: 2px solid #e5e7eb;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: 500;
+    color: #374151;
+}
+
+.back-btn:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.back-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.title-section {
+    text-align: center;
+}
+
+.title-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: .5rem;
+}
+
+.title-section p {
+    font-size: 1.125rem;
+    color: #6b7280;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.topic-card,
+.activity-card {
+    background: #fff;
+    border-radius: .75rem;
+    border: 2px solid #e5e7eb;
+    transition: .3s;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.topic-card.visible,
+.activity-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    transform: scaleX(0);
+    transition: .3s;
+}
+
+.topic-card:hover .card-header {
+    transform: scaleX(1);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.topic-icon,
+.activity-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: .3s;
+    flex-shrink: 0;
+}
+
+.topic-icon svg,
+.activity-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.topic-card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+    color: #1f2937;
+}
+
+.topic-card > .card-content > p {
+    color: #6b7280;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.subtopics {
+    margin-bottom: 1rem;
+}
+
+.subtopics h4 {
+    font-size: .875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: .5rem;
+}
+
+.subtopics ul {
+    list-style: none;
+    padding: 0;
+}
+
+.subtopics li {
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+    font-size: .875rem;
+    color: #6b7280;
+    margin-bottom: .25rem;
+    line-height: 1.4;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.difficulty {
+    display: inline-block;
+    padding: .25rem .75rem;
+    border-radius: 1rem;
+    font-size: .875rem;
+    font-weight: 500;
+}
+
+.difficulty.easy {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.difficulty.medium {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.difficulty.hard {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.action-buttons {
+    display: flex;
+    gap: .5rem;
+}
+
+.btn-pdf,
+.btn-quiz {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem 1rem;
+    border-radius: .375rem;
+    font-size: .875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+    border: 1px solid;
+}
+
+.btn-pdf {
+    background: #fff;
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+.btn-pdf:hover {
+    background: #eff6ff;
+    border-color: #93c5fd;
+    color: #1d4ed8;
+}
+
+.btn-quiz {
+    color: #fff;
+}
+
+.btn-pdf svg,
+.btn-quiz svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.activity-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.activity-info h3 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-bottom: .25rem;
+    color: #1f2937;
+}
+
+.activity-info p {
+    color: #6b7280;
+    font-size: .875rem;
+    line-height: 1.4;
+}
+
+/* --- ESTILOS ESPECÍFICOS DA PÁGINA INICIAL --- */
+body.home-page {
+    background: linear-gradient(135deg, #eff6ff 0, #faf5ff 100%);
+    padding: 1rem;
+}
+
+body.home-page .container {
+    max-width: 1024px;
+}
+
+body.home-page .header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+}
+
+body.home-page .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+body.home-page .graduation-icon {
+    height: 4rem;
+    width: 4rem;
+    color: #9333ea;
+}
+
+body.home-page .header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: .5rem;
+}
+
+body.home-page .header p {
+    font-size: 1.125rem;
+    color: #6b7280;
+}
+
+body.home-page .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+body.home-page .card {
+    background: #fff;
+    border-radius: .5rem;
+    border: 2px solid #e5e7eb;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+body.home-page .card:hover {
+    transform: translateY(-.5rem);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04);
+}
+
+body.home-page .math-card:hover {
+    border-color: #93c5fd;
+}
+
+body.home-page .portuguese-card:hover {
+    border-color: #86efac;
+}
+
+body.home-page .card-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+body.home-page .icon-container {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: .3s;
+}
+
+body.home-page .math-icon-bg {
+    background: #dbeafe;
+}
+
+body.home-page .math-card:hover .math-icon-bg {
+    background: #bfdbfe;
+}
+
+body.home-page .portuguese-icon-bg {
+    background: #dcfce7;
+}
+
+body.home-page .portuguese-card:hover .portuguese-icon-bg {
+    background: #bbf7d0;
+}
+
+body.home-page .subject-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+body.home-page .math-icon-bg .subject-icon {
+    color: #2563eb;
+}
+
+body.home-page .portuguese-icon-bg .subject-icon {
+    color: #16a34a;
+}
+
+body.home-page .card h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: .75rem;
+}
+
+body.home-page .card p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+body.home-page .btn {
+    width: 100%;
+    padding: .75rem 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border: none;
+    border-radius: .375rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+body.home-page .math-btn {
+    background: #2563eb;
+    color: #fff;
+}
+
+body.home-page .math-btn:hover {
+    background: #1d4ed8;
+}
+
+body.home-page .portuguese-btn {
+    background: #16a34a;
+    color: #fff;
+}
+
+body.home-page .portuguese-btn:hover {
+    background: #15803d;
+}
+
+body.home-page .footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: #6b7280;
+}
+
+/* --- ESTILOS ESPECÍFICOS DA PÁGINA DE MATEMÁTICA --- */
+body.math-page {
+    background: linear-gradient(135deg, #eff6ff 0, #e0f2fe 100%);
+}
+
+body.math-page .math-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+body.math-page .math-icon {
+    width: 4rem;
+    height: 4rem;
+    color: #2563eb;
+}
+
+body.math-page .topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1);
+    border-color: #bfdbfe;
+}
+
+body.math-page .card-header {
+    background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+}
+
+body.math-page .topic-card:hover .topic-icon {
+    background: #bfdbfe;
+}
+
+body.math-page .topic-icon {
+    background: #dbeafe;
+}
+
+body.math-page .topic-icon svg {
+    color: #2563eb;
+}
+
+body.math-page .subtopics li::before {
+    background: #3b82f6;
+}
+
+body.math-page .btn-quiz {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+body.math-page .btn-quiz:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+body.math-page .activity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    border-color: #93c5fd;
+}
+
+body.math-page .activity-icon {
+    background: #dbeafe;
+}
+
+body.math-page .activity-icon svg {
+    color: #2563eb;
+}
+
+/* --- ESTILOS ESPECÍFICOS DA PÁGINA DE PORTUGUÊS --- */
+body.portuguese-page {
+    background: linear-gradient(135deg, #f0fdf4 0, #dcfce7 100%);
+}
+
+body.portuguese-page .portuguese-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+body.portuguese-page .portuguese-icon {
+    width: 4rem;
+    height: 4rem;
+    color: #16a34a;
+}
+
+body.portuguese-page .topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, .1);
+    border-color: #86efac;
+}
+
+body.portuguese-page .card-header {
+    background: linear-gradient(90deg, #16a34a, #15803d);
+}
+
+body.portuguese-page .topic-card:hover .topic-icon {
+    background: #bbf7d0;
+}
+
+body.portuguese-page .topic-icon {
+    background: #dcfce7;
+}
+
+body.portuguese-page .topic-icon svg {
+    color: #16a34a;
+}
+
+body.portuguese-page .subtopics li::before {
+    background: #16a34a;
+}
+
+body.portuguese-page .btn-quiz {
+    background: #16a34a;
+    border-color: #16a34a;
+}
+
+body.portuguese-page .btn-quiz:hover {
+    background: #15803d;
+    border-color: #15803d;
+}
+
+body.portuguese-page .activity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    border-color: #86efac;
+}
+
+body.portuguese-page .activity-icon {
+    background: #dcfce7;
+}
+
+body.portuguese-page .activity-icon svg {
+    color: #16a34a;
+}
+
+/* =================================================================== */
+/* --- ESTILOS DA PÁGINA DA CALCULADORA --- */
+/* =================================================================== */
+body.calculator-page {
+    background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+    padding: 1rem;
+}
+.calculator-page .container { max-width: 420px; }
+.calculator-page .calc-icon { width: 4rem; height: 4rem; color: #2563eb; }
+.calculator-page .main-content { display: flex; justify-content: center; }
+.calculator { background: white; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb; width: 100%; max-width: 380px; }
+.calculator .display-section { background: #f8fafc; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; min-height: 120px; display: flex; flex-direction: column; justify-content: space-between; text-align: right; }
+.calculator .expression-display { font-size: 1.125rem; color: #6b7280; min-height: 1.5rem; word-break: break-all; margin-bottom: 0.5rem; }
+.calculator .result-display { font-size: 2.5rem; font-weight: bold; color: #1f2937; min-height: 3rem; }
+.calculator .buttons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+.calculator .btn { height: 4rem; border: none; border-radius: 0.75rem; font-size: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.2s ease; }
+.calculator .btn:active { transform: scale(0.95); }
+.calculator .btn-number { background: #f1f5f9; color: #334155; }
+.calculator .btn-operator { background: #3b82f6; color: white; }
+.calculator .btn-function { background: #6b7280; color: white; }
+.calculator .btn-equals { background: #10b981; color: white; }
+.calculator .btn-zero { grid-column: span 2; }
+
+/* =================================================================== */
+/* --- ESTILOS DA PÁGINA DO DICIONÁRIO (NOVO) --- */
+/* =================================================================== */
+body.dicionario-page {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.dicionario-page .container { max-width: 800px; }
+.dicionario-page .dict-icon { color: #16a34a; width: 4rem; height: 4rem; }
+.dicionario-page .dict-icon-wrapper { display: flex; justify-content: center; margin-bottom: 1rem; }
+.dicionario-page .back-icon { width: 1.25rem; height: 1.25rem; }
+
+.search-section { background: white; border-radius: 1rem; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e5e7eb; }
+.search-container { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.search-box { flex: 1; position: relative; display: flex; align-items: center; }
+.search-icon { position: absolute; left: 1rem; width: 1.25rem; height: 1.25rem; color: #9ca3af; }
+#searchInput { width: 100%; padding: 1rem 1rem 1rem 3rem; border: 2px solid #e5e7eb; border-radius: 0.75rem; font-size: 1.125rem; transition: all 0.3s ease; }
+#searchInput:focus { outline: none; border-color: #16a34a; box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1); }
+.clear-btn { position: absolute; right: 0.75rem; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.clear-btn svg { width: 1rem; height: 1rem; color: #6b7280; }
+.search-btn { background: #16a34a; color: white; border: none; padding: 1rem 2rem; border-radius: 0.75rem; font-size: 1.125rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; min-width: 120px; }
+.search-btn:hover:not(:disabled) { background: #15803d; }
+.search-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+.loading-spinner { width: 1.25rem; height: 1.25rem; border: 3px solid rgba(255, 255, 255, 0.3); border-top: 3px solid white; border-radius: 50%; animation: spin 1s linear infinite; }
+
+.suggestions h3 { font-size: 1rem; color: #374151; margin-bottom: 1rem; }
+.suggestion-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.suggestion-tag { background: #f3f4f6; border: 1px solid #d1d5db; padding: 0.5rem 1rem; border-radius: 1.5rem; font-size: 0.875rem; cursor: pointer; transition: all 0.3s ease; }
+.suggestion-tag:hover { background: #16a34a; color: white; border-color: #16a34a; }
+
+.results-section { background: white; border-radius: 1rem; padding: 2rem; min-height: 300px; border: 1px solid #e5e7eb; }
+.welcome-message { text-align: center; padding: 2rem; }
+.welcome-icon svg { width: 4rem; height: 4rem; color: #16a34a; margin: 0 auto 1rem; }
+.loading-state { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4rem 2rem; }
+.loading-spinner-large { width: 3rem; height: 3rem; border: 4px solid #e5e7eb; border-top: 4px solid #16a34a; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 1rem; }
+.word-result { animation: fadeIn 0.5s ease-in-out; }
+.word-header { border-bottom: 2px solid #e5e7eb; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+.word-title { font-size: 2rem; font-weight: bold; }
+.word-type { display: inline-block; background: #dcfce7; color: #166534; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem; font-weight: 500; }
+.word-definition { font-size: 1.125rem; line-height: 1.6; margin-bottom: 1.5rem; }
+.word-examples { background: #f9fafb; border-radius: 0.5rem; padding: 1rem; border-left: 4px solid #16a34a; }
+.example-list { list-style: none; padding: 0; }
+.example-list li { margin-bottom: 0.5rem; font-style: italic; }
+.example-list li::before { content: '"'; color: #16a34a; font-weight: bold; margin-right: 0.25rem; }
+.example-list li::after { content: '"'; color: #16a34a; font-weight: bold; margin-left: 0.25rem; }
+.not-found { text-align: center; padding: 2rem; }
+.not-found-icon svg { width: 4rem; height: 4rem; color: #ef4444; margin: 0 auto 1rem; }
+.available-words { background: #f3f4f6; border-radius: 0.75rem; padding: 1.5rem; border: 1px solid #e5e7eb; margin-top: 1rem; }
+.words-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 0.5rem; }
+.word-btn { background: white; border: 1px solid #d1d5db; padding: 0.5rem 0.75rem; border-radius: 1.5rem; font-size: 0.875rem; cursor: pointer; transition: all 0.3s ease; text-align: center; }
+.word-btn:hover { background: #dbeafe; border-color: #93c5fd; color: #1e40af; }
+.word-count { font-size: 0.875rem; text-align: center; margin-top: 1rem; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: .5rem;
+    }
+
+    .title-section h1 {
+        font-size: 2rem;
+    }
+
+    body.home-page .header p {
+        font-size: 1rem;
+    }
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topic-card {
+        margin-bottom: 1rem;
+    }
+
+    .card-footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .action-buttons {
+        justify-content: center;
+    }
+
+    .activity-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dicionario-page .search-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    body.home-page {
+        padding: .5rem;
+    }
+
+    body.home-page .header {
+        margin-bottom: 2rem;
+        padding-top: 1rem;
+    }
+
+    body.home-page .graduation-icon {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .title-section h1 {
+        font-size: 1.75rem;
+    }
+
+    body.home-page .cards-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .math-icon,
+    .portuguese-icon {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+    .topics-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .dicionario-page .search-section,
+    .dicionario-page .results-section {
+        padding: 1rem;
+    }
+}
+
+.dicionario-page .search-box, 
+.dicionario-page #searchInput {
+    list-style: none !important;
+    list-style-type: none !important;
+}

@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Português - EducaLivre</title>
+    <link rel="stylesheet" href="{% static 'app1/estilo.css' %}">
+</head>
+<body class="portuguese-page">
+    <div class="container">
+        <header class="header">
+            <div class="nav-bar">
+                <button class="back-btn" onclick="handleGoBack()">
+                    <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Voltar
+                </button>
+            </div>
+            
+            <div class="title-section">
+                <div class="portuguese-icon-wrapper">
+                    <svg class="portuguese-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                    </svg>
+                </div>
+                <h1>Português</h1>
+                <p>Escolha um tópico para estudar e praticar</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="topics-section">
+                <h2 class="section-title">Tópicos de Estudo</h2>
+                <div class="topics-grid">
+                    <div class="topic-card" data-delay="0">
+                        <div class="card-header"></div>
+                        <div class="card-content">
+                            <div class="topic-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                    <polyline points="10,9 9,9 8,9"/>
+                                </svg>
+                            </div>
+                            <h3>Gramática Básica</h3>
+                            <p>Fundamentos da língua portuguesa e suas regras</p>
+                            <div class="subtopics">
+                                <h4>Conteúdo:</h4>
+                                <ul>
+                                    <li>Classes de palavras (substantivo, adjetivo, verbo)</li>
+                                    <li>Concordância nominal e verbal</li>
+                                    <li>Regência verbal e nominal</li>
+                                    <li>Crase e acentuação</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <span class="difficulty medium">Médio</span>
+                                <div class="action-buttons">
+                                    <button class="btn-pdf" onclick="handleDownloadPDF('Gramática Básica')">PDF</button>
+                                    <button class="btn-quiz" onclick="handleStartQuiz('Gramática Básica')">Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="topic-card" data-delay="100">
+                        <div class="card-header"></div>
+                        <div class="card-content">
+                            <div class="topic-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                    <path d="M6 8h2"/><path d="M6 12h6"/><path d="M16 8h2"/><path d="M16 12h2"/>
+                                </svg>
+                            </div>
+                            <h3>Interpretação de Texto</h3>
+                            <p>Desenvolva habilidades de leitura e compreensão</p>
+                            <div class="subtopics">
+                                <h4>Conteúdo:</h4>
+                                <ul>
+                                    <li>Identificação de ideias principais</li>
+                                    <li>Inferência e dedução</li>
+                                    <li>Análise de argumentos</li>
+                                    <li>Compreensão de textos diversos</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <span class="difficulty easy">Fácil</span>
+                                <div class="action-buttons">
+                                    <button class="btn-pdf" onclick="handleDownloadPDF('Interpretação de Texto')">PDF</button>
+                                    <button class="btn-quiz" onclick="handleStartQuiz('Interpretação de Texto')">Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="topic-card" data-delay="200">
+                        <div class="card-header"></div>
+                        <div class="card-content">
+                            <div class="topic-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                                </svg>
+                            </div>
+                            <h3>Ortografia</h3>
+                            <p>Aprenda a escrever corretamente as palavras</p>
+                            <div class="subtopics">
+                                <h4>Conteúdo:</h4>
+                                <ul>
+                                    <li>Regras de acentuação</li>
+                                    <li>Uso do hífen</li>
+                                    <li>Palavras com grafia difícil</li>
+                                    <li>Homônimos e parônimos</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <span class="difficulty easy">Fácil</span>
+                                <div class="action-buttons">
+                                    <button class="btn-pdf" onclick="handleDownloadPDF('Ortografia')">PDF</button>
+                                    <button class="btn-quiz" onclick="handleStartQuiz('Ortografia')">Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="topic-card" data-delay="300">
+                        <div class="card-header"></div>
+                        <div class="card-content">
+                            <div class="topic-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6"/><path d="m21 12-6-6-6 6-6-6"/>
+                                </svg>
+                            </div>
+                            <h3>Pontuação</h3>
+                            <p>Domine o uso correto dos sinais de pontuação</p>
+                            <div class="subtopics">
+                                <h4>Conteúdo:</h4>
+                                <ul>
+                                    <li>Vírgula e ponto e vírgula</li>
+                                    <li>Dois pontos e aspas</li>
+                                    <li>Ponto de exclamação e interrogação</li>
+                                    <li>Travessão e parênteses</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <span class="difficulty medium">Médio</span>
+                                <div class="action-buttons">
+                                    <button class="btn-pdf" onclick="handleDownloadPDF('Pontuação')">PDF</button>
+                                    <button class="btn-quiz" onclick="handleStartQuiz('Pontuação')">Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="topic-card" data-delay="400">
+                        <div class="card-header"></div>
+                        <div class="card-content">
+                            <div class="topic-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                                    <path d="M15 5l4 4"/>
+                                </svg>
+                            </div>
+                            <h3>Redação</h3>
+                            <p>Aprenda a escrever textos claros e organizados</p>
+                            <div class="subtopics">
+                                <h4>Conteúdo:</h4>
+                                <ul>
+                                    <li>Estrutura de parágrafos</li>
+                                    <li>Tipos de texto (narrativo, descritivo)</li>
+                                    <li>Coesão e coerência</li>
+                                    <li>Técnicas de argumentação</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <span class="difficulty medium">Médio</span>
+                                <div class="action-buttons">
+                                    <button class="btn-pdf" onclick="handleDownloadPDF('Redação')">PDF</button>
+                                    <button class="btn-quiz" onclick="handleStartQuiz('Redação')">Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="topic-card" data-delay="500">
+                        <div class="card-header"></div>
+                        <div class="card-content">
+                            <div class="topic-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                                    <path d="M8 7h8"/><path d="M8 11h8"/>
+                                </svg>
+                            </div>
+                            <h3>Literatura Básica</h3>
+                            <p>Introdução ao mundo da literatura brasileira</p>
+                            <div class="subtopics">
+                                <h4>Conteúdo:</h4>
+                                <ul>
+                                    <li>Gêneros literários (épico, lírico, dramático)</li>
+                                    <li>Figuras de linguagem</li>
+                                    <li>Autores clássicos brasileiros</li>
+                                    <li>Análise de textos literários</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer">
+                                <span class="difficulty medium">Médio</span>
+                                <div class="action-buttons">
+                                    <button class="btn-pdf" onclick="handleDownloadPDF('Literatura Básica')">PDF</button>
+                                    <button class="btn-quiz" onclick="handleStartQuiz('Literatura Básica')">Quiz</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tools-section">
+                <h2 class="section-title">Ferramentas de Apoio</h2>
+                
+                <a href="{% url 'dicionario' %}" style="text-decoration: none; color: inherit;">
+                    <div class="activity-card" data-delay="600">
+                        <div class="activity-content">
+                            <div class="activity-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                    <path d="M6 8h2"/><path d="M6 12h6"/><path d="M16 8h2"/><path d="M16 12h2"/>
+                                </svg>
+                            </div>
+                            <div class="activity-info">
+                                <h3>Dicionário Interativo</h3>
+                                <p>Consulte significados, sinônimos e exemplos de uso das palavras</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </section>
+        </main>
+    </div>
+
+    <script src="{% static 'app1/script.js' %}"></script>
+</body>
+</html>

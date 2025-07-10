@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: {{ topico_nome }}</title>
+    <link rel="stylesheet" href="{% static 'app1/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/quiz.css' %}">
+</head>
+<body class="quiz-page">
+    {{ topico_nome|json_script:"topic-name" }}
+
+    <div class="quiz-container">
+        <div id="loading-state">
+            <h2>Carregando Perguntas...</h2>
+            <div class="spinner"></div>
+        </div>
+
+        <div id="quiz-content" class="hidden">
+            <div class="quiz-header">
+                <h1>Quiz: <span id="quiz-topic-title"></span></h1>
+                <div class="progress-info">
+                    <span id="question-counter"></span>
+                    <div class="progress-bar">
+                        <div id="progress-bar-fill"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="question-area">
+                <h2 id="question-text"></h2>
+            </div>
+
+            <div id="options-area" class="options-grid">
+                </div>
+            
+            <div class="quiz-footer">
+                <button id="submit-btn" class="hidden">Verificar</button>
+            </div>
+        </div>
+
+        <div id="results-screen" class="hidden">
+            <h2>Quiz Finalizado!</h2>
+            <h3>Você acertou <span id="score-correct"></span> de <span id="score-total"></span> perguntas.</h3>
+            <p id="score-message"></p>
+            <div class="results-buttons">
+                <button id="restart-btn">Tentar Novamente</button>
+                <button id="back-to-subject-btn">Voltar para a Matéria</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'app1/quiz.js' %}"></script>
+</body>
+</html>

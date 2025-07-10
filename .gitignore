@@ -1,0 +1,22 @@
+# Arquivos de cache do Python
+__pycache__/
+*.pyc
+
+# Banco de dados local
+db.sqlite3
+*.sqlite3
+
+# Pasta de ambiente virtual
+venv/
+env/
+.env
+
+# Arquivos de mídia que os usuários fazem upload
+mediafiles/
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de log
+*.log
